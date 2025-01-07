@@ -1,0 +1,56 @@
+﻿<Window x:Class="Inas_Sadek_Labb2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Inas_Sadek_Labb2"
+        mc:Ignorable="d"
+        Title="MainWindow"  Height="600" Width="1000"
+        Loaded="Window_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Pirates in Tortuga" Grid.Column="0" Margin="10">
+            <ListBox x:Name="PirateListBox" 
+                     MouseDoubleClick="PirateListBox_MouseDoubleClick" 
+                     Margin="5"/>
+        </GroupBox>
+
+        <GroupBox Header="Ship's Crew" Grid.Column="1" Margin="10">
+            <StackPanel Margin="5">
+                <ComboBox x:Name="RankComboBox" 
+                          Margin="0,0,0,10"
+                          SelectionChanged="RankComboBox_SelectionChanged"/>
+                <ListBox x:Name="CrewListBox" Height="350"/>
+                <Label x:Name="StatusLabel" 
+                       Content="Current Status" 
+                       Margin="0,10,0,10"
+                       HorizontalAlignment="Center"/>
+                <Button Content="Recruit Selected Pirate" 
+                        Click="RecruitButton_Click"
+                        Margin="0,10,0,0"
+                        Padding="5"/>
+                <Button Content="Recruit Entire Crew" 
+                        Click="RecruitCrewButton_Click"
+                        Margin="0,10,0,0"
+                        Padding="5"/>
+            </StackPanel>
+        </GroupBox>
+
+        <StatusBar Grid.Row="1" Grid.ColumnSpan="2">
+            <StatusBarItem>
+                <TextBlock Text="Double-click a pirate with a parrot to hear them speak!"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+
+</Window>
