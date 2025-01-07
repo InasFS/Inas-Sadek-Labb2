@@ -12,8 +12,7 @@ using System.Windows.Shapes;
 namespace Inas_Sadek_Labb2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// /// </summary>
     public partial class MainWindow : Window
     {
         private List<Pirate> tortugaPirates = new List<Pirate>();
